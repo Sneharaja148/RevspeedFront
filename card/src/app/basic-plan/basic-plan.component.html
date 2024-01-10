@@ -1,88 +1,44 @@
-<!-- <mat-card class="plan-card" style="display: inline-block;">
-  <mat-card-header style="background-color: darkslateblue;">
-    <mat-card-title style="text-align: center;">
-      Basic Monthly Plan
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content style="background-color: azure;">
-    <div class="plan-info">
-      <p><strong>Internet</strong> {{ planDetails.dataLimit }}</p>
-      <p><strong>Speed</strong> {{ speed }}</p>
-      <p><strong>Local/STD Calls</strong> {{ calls }}</p>
-    </div>
-    <div class="price"><strong>Cost</strong> {{ price }}</div>
-  </mat-card-content>
-  <mat-card-actions align="end" style="background-color: darkslateblue;">
-    <button mat-raised-button color="primary" style="background-color: burlywood;">Add Plan</button>
-  </mat-card-actions>
-</mat-card> -->
 
-
-<!-- <mat-card class="plan-card" style="display: inline-block; width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out; border-left: 4px solid #D32F2F;  border-top: 2px solid #D32F2F;">
-  <mat-card-header style="background-color: #FFFFFF; color: #212121; padding: 16px; position: relative;">
-    <mat-card-title style="text-align: center; font-size: 18px; font-weight: bold;">
-      <span style="border-bottom: 2px solid #D32F2F; padding-bottom: 4px;">Basic Monthly Plan</span>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content style="background-color: #FFFFFF; color: #757575; padding: 16px; transition: background-color 0.3s ease-in-out;">
-    <div class="plan-info">
-      <p><strong style="color: #757575;">Internet</strong> {{ planDetails.internet }}</p>
-      <p><strong style="color: #757575;">Speed</strong> {{ planDetails.speed }}</p>
-      <p><strong style="color: #757575;">Local/STD Calls</strong> {{ planDetails.calls }}</p>
+<div *ngFor="let planitems of plans" class="card-container" >
+  <mat-card class="custom-card">
+    <div class="plan-header" style="background: linear-gradient(to right,  #7091F5,#40128B ); ">
+      <h2>Basic Monthly Plan</h2>
     </div>
-    <div class="price" style="margin-top: 16px; padding-left: px; font-size: 20px; font-weight: bold; color: #212121;">
-      <strong>Cost:</strong> {{ planDetails.price }}
-    </div>
-  </mat-card-content>
-  <mat-card-actions align="end" style="background-color: #FFFFFF; padding: 16px;">
-    <button mat-raised-button color="primary" style="background-color: red; color: #FFFFFF; border-radius: 20px; padding: 10px 20px; transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);" hover="white">
-      Add Plan
-    </button>
-  </mat-card-actions>
-</mat-card> -->
-
-<mat-card class="plan-card" style="display: inline-block; width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out; border-left: 4px solid #D32F2F; border-top: 2px solid #D32F2F;">
-  <mat-card-header style="background: linear-gradient(to right, #D32F2F, #FF0000); color: #FFFFFF; padding: 16px; position: relative;">
-    <mat-card-title style="text-align: center; font-size: 18px; font-weight: bold;">
-      <span style="border-bottom: 2px solid #FFFFFF; padding-bottom: 4px;">Basic Monthly Plan</span>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content style="background-color: #FFFFFF; color: #757575; padding: 16px; transition: background-color 0.3s ease-in-out;">
-    <!-- Rectangular box with plan details -->
-    <div class="plan-details-box" style="background: linear-gradient(to right, #D32F2F, #FF0000); padding: 16px; border-radius: 8px; color: #FFFFFF;">
-      <div class="plan-info">
-        <p><strong>Internet:</strong> {{ planDetails.internet }}</p>
-        <p><strong>Speed:</strong> {{ planDetails.speed }}</p>
-        <p><strong>Local/STD Calls:</strong> {{ planDetails.calls }}</p>
+    <mat-list>
+      <!-- Remove the Monthly Price row -->
+      <mat-list-item>
+        <strong>Internet</strong>
+      </mat-list-item>
+      <br/>
+      <mat-list-item>
+        <strong></strong> {{planitems.internet}}
+      </mat-list-item>
+      <hr/>
+      <mat-list-item>
+        <strong>Speed</strong>
+      </mat-list-item>
+      <br/>
+      <mat-list-item>
+        <strong></strong> {{planitems.speed}}
+      </mat-list-item>
+      <hr/>
+      <mat-list-item>
+        <strong>Calls</strong> 
+      </mat-list-item>
+      <br/>
+      <mat-list-item>
+        <strong></strong> {{planitems.calls}}
+      </mat-list-item>
+      <br/>
+      <mat-divider></mat-divider>
+      
+      <div class="plan-footer">
+        <span class="cost">{{planitems.cost}}</span>
+        <button mat-raised-button color="primary" class="custom-button" style="color: white;">Add Plan</button>
       </div>
-    </div>
-
-    <!-- Horizontal line -->
-    <hr style="border: 0; height: 2px; background: #D32F2F; margin: 16px 0;">
-
-    <!-- Cost and Add Plan -->
-    <div class="cost-add-plan" style="display: flex; justify-content: space-between;">
-      <div class="price" style="font-size: 20px; font-weight: bold; color: #212121;">
-        <strong>Cost:</strong> {{ planDetails.price }}
-      </div>
-      <div class="add-plan-button">
-        <button mat-raised-button color="primary" style="background-color: red; color: #FFFFFF; border-radius: 20px; padding: 10px 20px; transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);" hover="white">
-          Add Plan
-        </button>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+    </mat-list>
+  </mat-card>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+ 
