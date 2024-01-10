@@ -1,0 +1,10 @@
+{
+  "plans": [
+    {
+      "internet": "High Speed",
+      "speed": "100 Mbps",
+      "calls": "Unlimited",
+      "price": "$50"
+    }
+  ]
+}

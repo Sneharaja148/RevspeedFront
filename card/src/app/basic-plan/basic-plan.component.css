@@ -1,0 +1,26 @@
+
+.plan-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.plan-info p {
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.price {
+  margin-top: 10px; /* Add margin to separate the cost from the plan details */
+}
+.plan-card:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card button:hover {
+  background-color: white;
+  color: red;
+}
+
+.plan-card button:active {
+  transform: scale(0.95);
+}
+
