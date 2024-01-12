@@ -13,12 +13,18 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { i_plans } from '../../card';
-
+import { UserPlanComponent } from './user-plan/user-plan.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicPlanComponent
+    BasicPlanComponent,
+    UserPlanComponent
   
   ],
   imports: [
@@ -28,7 +34,12 @@ import { i_plans } from '../../card';
     MatCardModule,MaterialModule,
     HttpClientModule,
     MatGridListModule,
-    MatListModule 
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

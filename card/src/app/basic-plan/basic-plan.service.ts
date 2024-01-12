@@ -8,7 +8,7 @@ import { i_plans } from '../../../card';
   providedIn: 'root'
 })
 export class BasicPlanService {
-  private apiUrl = 'http://localhost:3000/plans'; 
+  private apiUrl = 'http://localhost:3001/plans'; 
 
   constructor(private http: HttpClient) { }
 
@@ -21,5 +21,14 @@ export class BasicPlanService {
       })
     );
   }
+
+  selectedPlans: any[] = [];
+
+  addSelectedPlan(a_plans: any): void {
+    // Add the selected plan to the list
+    this.selectedPlans.push(a_plans);
   
+}
+
+
 }
